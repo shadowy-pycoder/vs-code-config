@@ -4,27 +4,38 @@
     "editor.unicodeHighlight.ambiguousCharacters": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.unicodeHighlight.includeStrings": false,
+    "editor.glyphMargin": false,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 120,
+    "editor.scrollBeyondLastLine": false,
+    "editor.useTabStops": true,
+    "editor.folding": false,
+    "editor.scrollbar.vertical": "auto",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.accessibilitySupport": "off",
+    "workbench.activityBar.location": "default",
+    "editor.guides.indentation": false,
+    "editor.lightbulb.enabled": "off",
+    "files.autoSave": "onFocusChange",
     "files.associations": {
-        "*.js": "javascript",
-     },
+        "*.js": "javascript"
+    },
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.codeActionsOnSave": {
             "source.fixAll.ruff": "always",
             "source.organizeImports.ruff": "always"
-          },
+        },
         "editor.formatOnSave": true,
         "editor.semanticHighlighting.enabled": true
     },
     "python.terminal.executeInFileDir": true,
-    "python.terminal.activateEnvironment": true,
-    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.activateEnvironment": false,
+    "python.terminal.activateEnvInCurrentTerminal": false,
     "python.analysis.autoFormatStrings": false,
     "python.languageServer": "Pylance",
     "python.terminal.launchArgs": [],
-    "python.analysis.exclude": [
-        "**/.mypy_cache"
-    ],
+    "python.analysis.exclude": ["**/.mypy_cache", "**/.ruff_cache"],
     "python.analysis.diagnosticSeverityOverrides": {
         "reportAbstractUsage": false,
         "reportUntypedClassDecorator": false,
@@ -36,7 +47,7 @@
         "reportAttributeAccessIssue": false,
         "reportCallInDefaultInitializer": false,
         "reportCallIssue": false,
-        "reportConstantRedefinition":false,
+        "reportConstantRedefinition": false,
         "reportDeprecated": false,
         "reportDuplicateImport": false,
         "reportFunctionMemberAccess": false,
@@ -106,16 +117,38 @@
         "reportUnusedImport": false,
         "reportUnusedVariable": false,
         "reportWildcardImportFromLibrary": false
-        },
-        "python.analysis.logLevel": "Error",
+    },
+    "python.analysis.logLevel": "Error",
     "[go]": {
         "editor.insertSpaces": true,
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "golang.go",
+        "editor.defaultFormatter": "golang.go"
     },
     "gopls": {},
     "go.toolsManagement.autoUpdate": true,
     "[javascript]": {
+        "editor.maxTokenizationLineLength": 2500,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnType": true, // required
+        "editor.formatOnPaste": true, // optional
+        "editor.formatOnSave": false, // optional
+        "editor.formatOnSaveMode": "file", // required to format on save
+        "files.autoSave": "onFocusChange", // optional but recommended
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "always"
+        }
+    },
+    "javascript.updateImportsOnFileMove.enabled": "prompt",
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "javascript.suggest.completeJSDocs": true,
+    "javascript.format.enable": true,
+    "javascript.autoClosingTags": true,
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.suggestionActions.enabled": false,
+    "javascript.validate.enable": true,
+    "[vue]": {
         "editor.maxTokenizationLineLength": 2500,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnType": false, // required
@@ -124,34 +157,12 @@
         "editor.formatOnSaveMode": "file", // required to format on save
         "files.autoSave": "onFocusChange", // optional but recommended
         "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": "always",
-          },
+            "source.fixAll.eslint": "always"
+        }
     },
-    "javascript.updateImportsOnFileMove.enabled": "prompt",
-   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-   "javascript.preferences.quoteStyle": "single",
-   "javascript.preferences.importModuleSpecifier": "relative",
-   "javascript.suggest.completeJSDocs": true,
-   "javascript.format.enable": true,
-   "javascript.autoClosingTags": true,
-   "javascript.referencesCodeLens.enabled": true,
-   "javascript.suggestionActions.enabled": false,
-   "javascript.validate.enable": true,
-   "[vue]": {
-    "editor.maxTokenizationLineLength": 2500,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnType": false, // required
-    "editor.formatOnPaste": true, // optional
-    "editor.formatOnSave": true, // optional
-    "editor.formatOnSaveMode": "file", // required to format on save
-    "files.autoSave": "onFocusChange", // optional but recommended
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "always",
-      },
-   },
-   "[typescript]": {},
+    "[typescript]": {},
     "emmet.includeLanguages": {
-        "javascript": "javascriptreact",
+        "javascript": "javascriptreact"
     },
     "prettier.arrowParens": "avoid",
     "prettier.jsxSingleQuote": true,
@@ -162,13 +173,29 @@
     "prettier.singleAttributePerLine": true,
     "prettier.vueIndentScriptAndStyle": true,
     "npm-intellisense.scanDevDependencies": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/__pycache__": true,
+        "**/.cache": true,
+        "**/.idea": true,
+        "**/.pytest_cache": true,
+        "**/.mypy_cache": true,
+        "**/.ruff_cache": true
+    },
     "files.watcherExclude": {
         "/.git/objects/": true,
         "/.git/subtree-cache/": true,
         "/node_modules/*/": true,
         "/.hg/store/": true,
         "/.mypy_cache/*": true,
-        "/venv/*": true
+        "/venv/*": true,
+        "/.ruff_cache/*": true,
+        "/.pytest_cache/*": true
     },
     "debug.allowBreakpointsEverywhere": true,
     "debug.inlineValues": "on",
@@ -203,6 +230,8 @@
     },
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "vscode-icons",
+    "workbench.sideBar.location": "left",
+    "extensions.ignoreRecommendations": true,
     "terminal.integrated.gpuAcceleration": "auto",
     "http.proxySupport": "off",
     "explorer.confirmDelete": false,
@@ -215,8 +244,31 @@
     "codeium.enableConfig": {
         "*": true,
         "markdown": true,
-        "go": false
+        "yaml": false,
+        "go": false,
+        "c": false
     },
-    "codeium.enableCodeLens": "hide_x",
+    "codeium.enableCodeLens": false,
+    "codeium.enableExplainProblem": false,
+    "codeium.enableCommandSideHintEducation": false,
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.unicodeHighlight.allowedLocales": {
+        "ru": true
+    },
+    "update.mode": "none",
+    "prettier.useEditorConfig": false,
+    "prettier.ignorePath": "",
+    "workbench.editorAssociations": {
+        "*.bin": "hexEditor.hexedit"
+    },
+    "editor.fontFamily": "'DejaVu Sans Mono', 'monospace', monospace",
+    "editor.rename.enablePreview": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "mypy.dmypyExecutable": "${userHome}/misc/venv313/bin/dmypy",
+    "ruff.configuration": "${userHome}/.ruff-config/ruff.toml",
+    "ruff.lineLength": 120,
+    "ruff.importStrategy": "useBundled",
+    "ruff.format.args": ["--config=${userHome}/.ruff-config/ruff.toml"],
+    "ruff.lint.args": ["--config=${userHome}/.ruff-config/ruff.toml"],
+    "terminal.integrated.fontFamily": "monospace"
 }
