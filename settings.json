@@ -13,9 +13,13 @@
     "editor.scrollbar.vertical": "auto",
     "editor.scrollbar.horizontal": "hidden",
     "editor.accessibilitySupport": "off",
+    "editor.renderLineHighlight": "none",
     "workbench.activityBar.location": "default",
     "editor.guides.indentation": false,
     "editor.lightbulb.enabled": "off",
+    "editor.semanticHighlighting.enabled": false,
+    "editor.matchBrackets": "never",
+    "editor.stickyScroll.enabled": false,
     "files.autoSave": "onFocusChange",
     "files.associations": {
         "*.js": "javascript"
@@ -135,7 +139,7 @@
         "editor.formatOnSaveMode": "file", // required to format on save
         "files.autoSave": "onFocusChange", // optional but recommended
         "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": "always"
+            "source.fixAll.eslint": "never"
         }
     },
     "javascript.updateImportsOnFileMove.enabled": "prompt",
@@ -196,6 +200,13 @@
         "/venv/*": true,
         "/.ruff_cache/*": true,
         "/.pytest_cache/*": true
+    },
+    "search.exclude": {
+        "**/node_modules/**": true,
+        "**/dist/**": true,
+        "**/tmp/**": true,
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true
     },
     "debug.allowBreakpointsEverywhere": true,
     "debug.inlineValues": "on",
@@ -264,11 +275,18 @@
     "editor.fontFamily": "'DejaVu Sans Mono', 'monospace', monospace",
     "editor.rename.enablePreview": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "mypy.dmypyExecutable": "${userHome}/misc/venv313/bin/dmypy",
+    "mypy.dmypyExecutable": "~/misc/venv313/bin/dmypy",
     "ruff.configuration": "${userHome}/.ruff-config/ruff.toml",
     "ruff.lineLength": 120,
     "ruff.importStrategy": "useBundled",
     "ruff.format.args": ["--config=${userHome}/.ruff-config/ruff.toml"],
     "ruff.lint.args": ["--config=${userHome}/.ruff-config/ruff.toml"],
-    "terminal.integrated.fontFamily": "monospace"
+    "terminal.integrated.fontFamily": "monospace",
+    "gitlens.changes.locations": ["gutter", "line", "overview"],
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "extensions.autoCheckUpdates": false,
+    "extensions.autoUpdate": false,
+    "search.followSymlinks": false
 }
