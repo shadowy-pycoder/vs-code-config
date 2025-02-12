@@ -1,0 +1,162 @@
+
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "backspace",
+        "command": "deleteLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "backspace",
+        "command": "-deleteLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+backspace",
+        "command": "-deleteLeft",
+        "when": "textInputFocus"
+    },
+  //
+  // VIM NAVIGATION SHORTCUTS
+  //
+  {
+    // "ctrl+h": Focuses on the left editor group when the text editor is focused, Vim extension is active, and Vim is not in Insert mode
+    "key": "ctrl+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+  {
+    // "ctrl+l": Focuses on the right editor group when the text editor is focused, Vim extension is active, and Vim is not in Insert mode
+    "key": "ctrl+l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+  {
+    // "ctrl+k": Focuses on the editor group above when the text editor is focused, Vim extension is active, and Vim is not in Insert mode
+    "key": "ctrl+k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+  {
+    // "ctrl+j": Focuses on the editor group below when the text editor is focused, Vim extension is active, and Vim is not in Insert mode
+    "key": "ctrl+j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+  //
+  // SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS
+  //
+  {
+    // "ctrl+j": Selects the next suggestion in the suggestions widget when it's visible
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    // "ctrl+k": Selects the previous suggestion in the suggestions widget when it's visible
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    // "ctrl+j": Selects the next item in the Quick Open dialog when it's open
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    // "ctrl+k": Selects the previous item in the Quick Open dialog when it's open
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  //
+  // SEARCH AND NAVIGATION
+  //
+  {
+    // "ctrl+shift+f": Opens find in files with current word
+    "key": "ctrl+shift+f",
+    "command": "workbench.action.findInFiles",
+    "when": "editorFocus"
+  },
+  {
+    // "F4": Goes to next search result
+    "key": "F4",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    // "shift+F4": Goes to previous search result
+    "key": "shift+F4",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+
+  //
+  // TERMINAL SHORTCUTS
+  //
+  {
+    // "ctrl+;": Focuses the terminal when it's not currently focused
+    "key": "ctrl+;",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    // "ctrl+;": Focuses back to the active editor group when terminal is focused
+    "key": "ctrl+;",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    // "ctrl+shift+;": Toggles terminal panel maximization and focuses on terminal
+    "key": "ctrl+shift+;",
+    "command": "multiCommand.toggleMaximizedPanelAndFocusTerminal",
+    "when": "!terminalFocus || terminalFocus"
+  },
+  //
+  // FILE EXPLORER SHORTCUTS
+  //
+  {
+    // "ctrl+shift+e": Focuses on File Explorer when text editor is focused
+    "key": "ctrl+shift+e",
+    "command": "workbench.files.action.focusFilesExplorer",
+    "when": "editorTextFocus"
+  },
+  {
+    // "ctrl+shift+e": Focuses back on active editor group when File Explorer is focused
+    "key": "ctrl+shift+e",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    // "ctrl+shift+1": Opens selected file in the first (left) editor group from File Explorer
+    "key": "ctrl+shift+1",
+    "command": "explorer.openToSide",
+    "args": { "group": 0 },
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    // "ctrl+shift+2": Opens selected file in the second (right) editor group from File Explorer
+    "key": "ctrl+shift+2",
+    "command": "explorer.openToSide",
+    "args": { "group": 1 },
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+    //
+  // QUICK NAVIGATION SHORTCUTS
+  //
+  {
+    // "ctrl+1": Quickly focuses the first editor group (leftmost editor)
+    "key": "ctrl+1",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    // "ctrl+2": Quickly focuses the second editor group (right editor)
+    "key": "ctrl+2",
+    "command": "workbench.action.focusSecondEditorGroup"
+  }
+]
